@@ -1,45 +1,46 @@
-const game = ['rock', 'paper', 'scissors'];
-
 function playRound(){
+
+    const game = ['rock', 'paper', 'scissors'];
 
     function mathRandom(parametr){
         return Math.floor(Math.random()*parametr.length);
-    }  
-
+    }
     function computerPlay(item){
         return item[mathRandom(game)];
     }
-
+    
     const playerPlays = 'paper';
     
     const computerPlays = computerPlay(game);
-
-    function add(playerSelection, computerSelection){
-        return computerSelection.concat(playerSelection);
+    
+    function add(){
+        return computerPlays.concat(playerPlays);
     }
 
-    function findWin(item5){
+    const result = add();
+    
+    function findWin(){
 
-        switch(item5){
+        switch(result){
             case 'scissorspaper':
             case 'rockscissprs':
             case 'paperrock':
-                return `Computer play and win\n`;
+                return `Computer play ${computerPlays} and win with player play ${playerPlays}\n`;
                 break;
             case 'scissorsrock':
             case 'rockpaper':
             case 'paperscissors':
-                return `Player play and win\n`;
+                return `Player play ${playerPlays} and win with computer play ${computerPlays}\n`;
                 break;
             case 'paperpaper':
             case 'rockrock':
             case 'scissorsscissors':
-                return `Computer and player and not wins\n`;
+                return `Computer play ${computerPlays} and player play ${playerPlays} and not wins\n`;
                 break;
         }
     }
-    for(let i = 0; i < 15; i++){
-        console.log(findWin(add(playerPlays, computerPlays)), add(playerPlays, computerPlays));
-    }
+    return findWin();
 }
-playRound();
+for(let i = 0; i < 15; i++){
+    console.log(playRound());
+}
