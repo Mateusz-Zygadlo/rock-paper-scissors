@@ -22,3 +22,10 @@ body{
 .winner{
     margin-top: 30px;
 }
+.play{
+    display: flex;
+    justify-content: space-around;
+}
+.play div{
+    padding: 20px;
+}

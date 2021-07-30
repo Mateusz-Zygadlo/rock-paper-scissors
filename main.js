@@ -1,4 +1,8 @@
 const game = ['rock', 'paper', 'scissors'];
+let playerChoice;
+
+const buttons = document.querySelectorAll('.button');
+let noeexsist = document.querySelector('.noeexsist');
 
 function computerPlay(){
     function mathRandom(parametr){
@@ -14,10 +18,26 @@ let computerCount = 0;
 let playerCount = 0;
 let drawCount = 0;
 
+
 function playRound() {
+    let test;
+
+    function playerPlay15(){
+        buttons.forEach((btn) => {
+            btn.addEventListener('click', (e) => {
+                return test = e.target.value;    
+            })
+        })
+    }
+
+    const playerPlays = playerPlay15();
+
+    const computerPlays2 = document.querySelector('.computerPlays');
 
     const computerPlays = computerPlay(game);
-    const playerPlays = 'paper';
+
+    let computerPlay123 = document.querySelector('.computerPlay123').textContent = `${computerPlays}`;
+    let playerPlay123 = document.querySelector('.playerPlay123').textContent = `${playerPlays}`;
 
     let result = computerPlays.concat(playerPlays);
 
@@ -26,21 +46,21 @@ function playRound() {
         case 'rockscissprs':
         case 'paperrock':
             computerCount++;
-            return `Computer play ${computerPlays} and win with player play ${playerPlays}\n`;
+            return computerPlays2.textContent = `Computer play ${computerPlays} and win with player play ${playerPlays}\n`;
         case 'scissorsrock':
         case 'rockpaper':
         case 'paperscissors':
             playerCount++;
-            return `Player play ${playerPlays} and win with computer play ${computerPlays}\n`;
+            return computerPlays2.textContent = `Player play ${playerPlays} and win with computer play ${computerPlays}\n`;
         case 'paperpaper':
         case 'rockrock':
         case 'scissorsscissors':
             drawCount++;
-            return `Computer play ${computerPlays} and player play ${playerPlays} and not wins\n`;
+            return computerPlays2.textContent = `Computer play ${computerPlays} and player play ${playerPlays} and not wins\n`;
     }
 }
 function gameOn(){
-    for(let i = 0; i < 5; i++){
+    for(let i = 0; i < 1; i++){
         console.log(playRound());
     }   
 }   
@@ -55,7 +75,12 @@ function end(){
         computer ${computerCount} draw ${drawCount}`;
     }
 }
-console.log(end());
+
+buttons.forEach((btn) => {
+    btn.addEventListener('click', (e) => {
+        gameOn();
+    })
+})
 
 function clearValue(){
     return computerCount = 0;
