@@ -13,6 +13,18 @@ function computerPlay(){
     }
     return computerPlay(game);
 }
+let playerPlay123 = document.querySelector('.playerPlay123');
+
+let userChoice;
+
+buttons.forEach( (buttons) => {
+    buttons.addEventListener('click', (e) => {
+        userChoice = e.target.value;
+        playerPlay123.textContent = userChoice;
+        end();
+    })
+})
+const playerPlays =  userChoice;
 
 let computerCount = 0;
 let playerCount = 0;
@@ -20,26 +32,16 @@ let drawCount = 0;
 
 
 function playRound() {
-    let test;
-
-    function playerPlay15(){
-        buttons.forEach((btn) => {
-            btn.addEventListener('click', (e) => {
-                return test = e.target.value;    
-            })
-        })
-    }
-
-    const playerPlays = playerPlay15();
 
     const computerPlays2 = document.querySelector('.computerPlays');
+
+    const playerPlays15 = userChoice;
 
     const computerPlays = computerPlay(game);
 
     let computerPlay123 = document.querySelector('.computerPlay123').textContent = `${computerPlays}`;
-    let playerPlay123 = document.querySelector('.playerPlay123').textContent = `${playerPlays}`;
 
-    let result = computerPlays.concat(playerPlays);
+    let result = computerPlays.concat(playerPlays15);
 
     switch(result){
         case 'scissorspaper':
@@ -61,7 +63,7 @@ function playRound() {
 }
 function gameOn(){
     for(let i = 0; i < 1; i++){
-        console.log(playRound());
+        console.log(playRound(userChoice));
     }   
 }   
 
@@ -76,11 +78,6 @@ function end(){
     }
 }
 
-buttons.forEach((btn) => {
-    btn.addEventListener('click', (e) => {
-        gameOn();
-    })
-})
 
 function clearValue(){
     return computerCount = 0;
