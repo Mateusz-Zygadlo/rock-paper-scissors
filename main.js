@@ -14,6 +14,10 @@ let playerCount = document.querySelector('.playerCount');
 
 let winner = document.querySelector('.winner');
 
+// 
+let startPageButton = document.querySelector('.startPageButton');
+let startPage = document.querySelector('.page');
+
 function computerPlay(){
     function mathRandom(parametr){
         return Math.floor(Math.random()*parametr.length);
@@ -34,24 +38,30 @@ function playRound() {
         case 'paperrock':
             computerScore++;
             computerCount.textContent = computerScore;
-            winner.textContent = 'computer win player lose';
+            winner.textContent = 'computer win';
             break;
         case 'scissorsrock':
         case 'rockpaper':
         case 'paperscissors':
             playerScore++;
             playerCount.textContent = playerScore;
-            winner.textContent = 'player win computer lose';
+            winner.textContent = 'you win';
             break;
         case 'paperpaper':
         case 'rockrock':
         case 'scissorsscissors':
-            winner.textContent = 'computer player draw';
-            console.log('draw');
+            winner.textContent = 'draw';
             break;
     }
 
 }
+startPageButton.addEventListener('click', deleteStartPage);
+
+function deleteStartPage(){
+    startPage.classList.remove('start');
+    startPage.classList.add('deleteStart');
+}
+
 
 buttons.forEach( (buttons) => {
     buttons.addEventListener('click', (e) => {
