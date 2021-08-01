@@ -15,25 +15,21 @@ body{
     align-items: center;
     flex-direction: column;
 }
-.computerPlays{
-    margin-top: 30px;
-    color: blue;
-}
-.winner{
-    margin-top: 30px;
-}
-.play{
-    display: flex;
-    justify-content: space-around;
-}
-.play div{
-    padding: 20px;
-}
 .result{
     display: flex;
     justify-content: space-around;
-    flex-direction: row;
+    margin-top: 10px;
 }
 .result div{
-    margin: 20px;
+    margin-right: 10px;
+}
+.count{
+    display: flex;
+    justify-content: space-around;
+}
+.count div{
+    padding: 10px;
+}
+.winner{
+    margin-top: 20px;
 }
