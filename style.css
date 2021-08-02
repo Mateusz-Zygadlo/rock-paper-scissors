@@ -1,49 +1,18 @@
+:root{
+    --button-color: #4285f4;
+    --white: #FFF;
+    --black: rgb(0, 0, 0);
+}
 *{
     padding: 0%;
     margin: 0%;
     box-sizing: border-box;
     overflow: hidden;
 }
-:root{
-    --button-color: #4285f4;
-    --background: #FFF;
-}
 body{
     width: 100vw;
     height: 100vh;
-    background-color: lightblue;
-}
-.container{
-    width: 300px;
-    height: 200px;
-    background-color: aliceblue;
-    border-radius: 10px;
-    padding: 20px;
-    margin: 20px auto;
-}
-.flex{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-}
-.result{
-    display: flex;
-    justify-content: space-around;
-    margin-top: 10px;
-}
-.result div{
-    margin-right: 10px;
-}
-.count{
-    display: flex;
-    justify-content: space-around;
-}
-.count div{
-    padding: 10px;
-}
-.winner{
-    margin-top: 20px;
+    background-color: var(--white);
 }
 .start{
     position: fixed;
@@ -51,20 +20,112 @@ body{
     left: 0%;
     width: 100%;
     height: 100vh;
-    background-color: black;
     display: flex;
     justify-content: center;
     align-items: center;
+    background-color: var(--black);
 }
 .start button{
     background-color: var(--button-color);
     border: none;
     padding: 7px 10px;
-    color: var(--background);
+    color: var(--white);
     font-weight: bold;
     border-radius: 4px;
     cursor: pointer;
+    position: absolute;
+    transform: scale(1.2);
 }
 .deleteStart{
     visibility: hidden;
+}
+.container{
+    min-width: 300px;
+    min-height: 200px; 
+    border-radius: 10px;
+    padding: 20px;
+    margin: 20px auto;
+}
+.container h1{
+    display: flex;
+    justify-content: center;
+    margin-bottom: 10px;
+    font-weight: 100;
+}
+.container button{
+    width: 80px;
+    height: 30px;
+    background-color: var(--black);
+    color: var(--white);
+    border: none;
+    cursor: pointer;
+}
+.flex{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.who{
+    width: 90%;
+    display: flex;
+    justify-content: space-around;
+    font-size: 35px;
+    margin-top: 40px;
+    padding: 20px;
+    border-bottom: 1px solid var(--black);
+}
+.result{
+    display: flex;
+    justify-content: space-around;
+    margin-top: 10px;
+    width: 90%;
+    min-height: 50px;
+    font-size: 30px;
+    margin-top: 20px;
+}
+.result div{
+    margin-right: 10px;
+}
+.count{
+    display: flex;
+    justify-content: space-around;
+    width: 20%;
+    font-size: 28px;
+}
+.count div{
+    padding: 10px;
+}
+.winner{
+    margin-top: 40px;
+    font-size: 30px;
+}
+.winPage{
+    position: fixed;
+    top: 0%;
+    left: 0%;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: black;
+    z-index: 100;
+}
+.winPage h1{
+    position: absolute;
+    margin: 20px auto;
+    top: 30%;
+    left: auto;
+    color: var(--white);
+}
+.winPage button{
+    background-color: var(--button-color);
+    border: none;
+    padding: 7px 10px;
+    color: var(--white);
+    font-weight: bold;
+    border-radius: 4px;
+    cursor: pointer;
+    position: absolute;
 }
